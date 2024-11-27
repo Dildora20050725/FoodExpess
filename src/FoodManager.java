@@ -41,18 +41,24 @@ public class FoodManager {
 
     }
     public void showAllFood(){
-        for (Food food: foods){
-            food.showFoodData();
+        if (foods.isEmpty()){
+            System.out.println("Not found food!");
+        }else {
+            for (Food food: foods){
+                food.showFoodData();
+            }
+            System.out.println("\n-----------------------------------------");
         }
+
     }
     public void orderList(){
+        double totalAmount = 0;
         if (orders.isEmpty()){
             System.out.println("This order is not available!");
         }else {
             System.out.println("Order list: ");
-            for (MakeOrder makeOrder: orders){
-                makeOrder.showAllOrders();
-            }
+
+            System.out.println("TotalAmount: "+totalAmount);
         }
     }
     public void showAllHistory(){
